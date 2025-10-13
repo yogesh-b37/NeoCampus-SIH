@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Student Dashboard</title>
+    <style>
+      body { font-family: Arial, sans-serif; background:#f4f6fb; margin:0; }
+      .wrap { max-width:900px; margin:60px auto; background:#fff; padding:24px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+      h1{ color:#333 }
+      .meta{ color:#555; margin-bottom:18px }
+      .actions{ margin-top:20px }
+      .btn{ padding:10px 14px; border-radius:6px; border:none; cursor:pointer }
+      .btn-primary{ background:#007bff; color:#fff }
+      .btn-logout{ background:#dc3545; color:#fff }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Welcome</h1>
+      <div class="meta">Loading user information...</div>
+      <div class="actions">
+        <button id="logout" class="btn btn-logout">Logout</button>
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        function render() {
+          let meta = document.querySelector('.meta');
+          let raw = null;
+          try { raw = sessionStorage.getItem('ses_user'); } catch(e) { raw = null; }
+          if (!raw) {
+            meta.innerHTML = 'No active session. Redirecting to login...';
+            setTimeout(() => location.href = 'index.html', 1200);
+            return;
+          }
+          let s = null;
+          try { s = JSON.parse(raw); } catch(e){ s = null; }
+          if (!s || !s.username) {
+            meta.innerHTML = 'Invalid session data. Redirecting to login...';
+            setTimeout(() => location.href = 'index.html', 1200);
+            return;
+          }
+          meta.innerHTML = '<strong>' + (s.username) + '</strong> &middot; Role: ' + (s.role || 'Student');
+        }
+        document.getElementById('logout').addEventListener('click', function(){
+          try { sessionStorage.removeItem('ses_user'); } catch(e){}
+          location.href = 'index.html';
+        });
+        render();
+      })();
+    </script>
+  </body>
+</html>
