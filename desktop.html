@@ -3,9 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Dashboard - SISTec-R</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        
+
+    <div class="sidebar">
+        <div class="brand">
+            <div class="logo-placeholder">SISTec</div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item active">
+                <i class="fas fa-th-large"></i>
+                <span class="menu-text">Dashboard</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-user"></i>
+                <span class="menu-text">Profile</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-calendar-check"></i>
+                <span class="menu-text">Attendance</span>
+                <i class="fas fa-plus menu-expand"></i>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-desktop"></i>
+                <span class="menu-text">LMS (ITLE)</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-edit"></i>
+                <span class="menu-text">Examination</span>
+                <i class="fas fa-plus menu-expand"></i>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="menu-text">Student Services</span>
+                <i class="fas fa-plus menu-expand"></i>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-bed"></i>
+                <span class="menu-text">Apply For Hostel</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-file-invoice"></i>
+                <span class="menu-text">Fees Receipt</span>
+                <i class="fas fa-plus menu-expand"></i>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-comment-dots"></i>
+                <span class="menu-text">Feedback</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-chart-bar"></i>
+                <span class="menu-text">Even Course Subject</span>
+                <i class="fas fa-plus menu-expand"></i>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-user-plus"></i>
+                <span class="menu-text">Online Registration</span>
+                <i class="fas fa-plus menu-expand"></i>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-rupee-sign"></i>
+                <span class="menu-text">Payable Fees</span>
+            </li>
+             <li class="menu-item">
+                <i class="fas fa-key"></i>
+                <span class="menu-text">Reset Password</span>
+            </li>
+        </ul>
+      
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-expand" style="margin-left: 15px;"></i>
+            </div>
+            <div class="header-center">
+                SAGAR INSTITUTE OF SCIENCE, TECHNOLOGY AND RESEARCH(SISTec-R)
+            </div>
+            <div class="header-right">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-bell"></i>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            
+            <div class="left-column">
+                
+                <div class="card semester-result">
+                    <div class="card-header">Semester Wise Result</div>
+                </div>
+
+                <div class="card attendance-section">
+                    <div class="card-header">Attendance</div>
+                    <div class="sem-label">SEM 1</div>
+                    
+                    <div class="chart-placeholder">
+                        <div class="graph-bars">
+                            <div class="bar bar-blue"></div>
+                            <div class="bar bar-red"></div>
+                            <div class="bar bar-yellow"></div>
+                        </div>
+                        <div class="legend">
+                            <span><div class="dot blue"></div> PRESENT</span>
+                            <span><div class="dot red"></div> ABSENT</span>
+                            <span><div class="dot yellow"></div> LEAVE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                
+                <div class="card">
+                    <div class="card-header">Notice</div>
+                    <div class="notice-content">
+                        <a href="#" class="view-balance">View Balance : Click here</a>
+                        
+                        <div class="hindi-text">
+                            <strong>सत्र -: (2025-26) SC, ST & OBC Scholarship Notice :</strong><br><br>
+                            "सत्र -: (2025-26)* *SC, ST & OBC द्वितीय, तृतीय एवं चतुर्थ वर्ष के समस्त छात्रों को सूचित किया जाता है कि, MPTASS PORTAL पर छात्रों का परीक्षा परिणाम नवीनीकरण छात्रवृत्ति के लिए Update करने की प्रक्रिया महाविद्यालय स्तर पर प्रारंभ हो चुकी है। समस्त छात्र छात्रवृत्ति शाखा में RGPV की पिछले वर्ष (1st Sem & 2nd Sem, 3rd & 4th Sem, or 5th & 6th Sem.) की अंकसूची के साथ संपर्क करें और अपना परीक्षा परिणाम अपडेट करवाये!"
+                            <br><br>
+                            <span class="notice-note">*नोट :- OTR रजिस्ट्रेशन करने के उपरांत ही छात्रवृत्ति का फॉर्म भर सकते है, बिना...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Today's Events</div>
+                    <div class="events-content">
+                        Event Not Available.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>
