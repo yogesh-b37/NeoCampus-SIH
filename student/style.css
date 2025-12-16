@@ -374,3 +374,96 @@ header {
         grid-template-columns:1fr;
 }
 }
+
+/* --- PASTE THIS AT THE BOTTOM OF STYLE.CSS --- */
+
+/* 1. Dashboard Layout Grid Fix */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* 2. Profile Section Styles */
+.profile-view {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Profile Inner Sidebar */
+.profile-sub-sidebar {
+    width: 220px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+}
+.profile-sub-sidebar ul { list-style: none; }
+.profile-sub-sidebar li {
+    padding: 12px 15px;
+    font-size: 13px;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.profile-sub-sidebar li:hover { background-color: #f8f9fa; }
+.profile-sub-sidebar li.active {
+    background-color: #5c9bf5;
+    color: white;
+}
+.profile-sub-sidebar li i { margin-right: 8px; }
+
+/* Profile Form Area */
+.profile-content { flex-grow: 1; }
+.page-title { font-size: 16px; color: #666; margin-bottom: 15px; }
+.form-wrapper {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.form-header-blue {
+    background-color: #5c9bf5;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.details-form {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+    gap: 20px;
+}
+.form-group { display: flex; flex-direction: column; }
+.form-group label {
+    font-size: 11px; font-weight: 600; color: #444; margin-bottom: 5px;
+}
+.form-group input, .form-group select {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #495057;
+    width: 100%;
+}
+
+/* Responsive Fix */
+@media (max-width: 1024px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .details-form { grid-template-columns: 1fr; }
+    .profile-view { flex-direction: column; }
+    .profile-sub-sidebar { width: 100%; }
+}
+
+/* Animation */
+.content-section {
+    animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0);}
+}

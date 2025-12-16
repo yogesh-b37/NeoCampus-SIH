@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard - SISTec-R</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="brand">
+        <div class="logo-placeholder">SISTec</div>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-item active" onclick="showSection('dashboard', this)">
+          <i class="fas fa-th-large"></i>
+          <span class="menu-text">Dashboard</span>
+        </li>
+        <li class="menu-item" onclick="showSection('profile', this)">
+          <i class="fas fa-user"></i>
+          <span class="menu-text">Profile</span>
+        </li>
+        <li class="menu-item" onclick="showSection('attendance', this)">
+          <i class="fas fa-calendar-check"></i>
+          <span class="menu-text">Attendance</span>
+          <i class="fas fa-plus menu-expand"></i>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-desktop"></i
+          ><span class="menu-text">LMS (ITLE)</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-edit"></i><span class="menu-text">Examination</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-graduation-cap"></i
+          ><span class="menu-text">Student Services</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-bed"></i
+          ><span class="menu-text">Apply For Hostel</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-file-invoice"></i
+          ><span class="menu-text">Fees Receipt</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-comment-dots"></i
+          ><span class="menu-text">Feedback</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-key"></i
+          ><span class="menu-text">Reset Password</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <div class="header-left">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="header-center">
+          SAGAR INSTITUTE OF SCIENCE, TECHNOLOGY AND RESEARCH(SISTec-R)
+        </div>
+        <div class="header-right">
+          <i class="fas fa-home"></i>
+          <i class="fas fa-bell"></i>
+        </div>
+      </header>
+
+      <div class="dashboard-container">
+        <div id="section-dashboard" class="content-section">
+          <div class="dashboard-grid">
+            <div class="left-column">
+              <div class="card semester-result">
+                <div class="card-header">Semester Wise Result</div>
+              </div>
+              <div class="card attendance-section">
+                <div class="card-header">Attendance</div>
+                <div class="sem-label">SEM 1</div>
+                <div class="chart-placeholder">
+                  <div class="graph-bars">
+                    <div class="bar bar-blue"></div>
+                    <div class="bar bar-red"></div>
+                    <div class="bar bar-yellow"></div>
+                  </div>
+                  <div class="legend">
+                    <span
+                      ><div class="dot blue"></div>
+                      PRESENT</span
+                    >
+                    <span
+                      ><div class="dot red"></div>
+                      ABSENT</span
+                    >
+                    <span
+                      ><div class="dot yellow"></div>
+                      LEAVE</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-column">
+              <div class="card">
+                <div class="card-header">Notice</div>
+                <div class="notice-content">
+                  <a href="#" class="view-balance">View Balance : Click here</a>
+                  <div class="hindi-text">
+                    <strong>Important Notice</strong><br />
+                    Scholarship updates available on MPTASS Portal. Please
+                    update your results.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-profile" class="content-section" style="display: none">
+          <div class="profile-view">
+            <div class="profile-sub-sidebar">
+              <ul>
+                <li class="active"><i class="far fa-user"></i> Personal</li>
+                <li><i class="fas fa-graduation-cap"></i> Academic</li>
+                <li><i class="fas fa-map-marker-alt"></i> Address</li>
+                <li><i class="fas fa-camera"></i> Photo & Sign</li>
+                <li><i class="fas fa-book"></i> Subject</li>
+              </ul>
+            </div>
+
+            <div class="profile-content">
+              <h3 class="page-title">Personal Details</h3>
+              <div class="form-wrapper">
+                <div class="form-header-blue">My Details</div>
+                <form class="details-form">
+                  <div class="form-group">
+                    <label>Title <span class="required">*</span></label>
+                    <select disabled>
+                      <option>MR.</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" value="YOGESH" readonly />
+                  </div>
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" value="BALPANDE" readonly />
+                  </div>
+                  <div class="form-group">
+                    <label>Mobile</label>
+                    <input type="text" value="7489600508" readonly />
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input
+                      type="text"
+                      value="yogeshbalpande111@gmail.com"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Aadhar Number</label>
+                    <input type="text" value="485179666018" readonly />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="section-attendance"
+          class="content-section"
+          style="display: none"
+        >
+          <div class="card">
+            <div class="card-header">Detailed Attendance Record</div>
+            <div style="padding: 20px; text-align: center; color: #777">
+              <h3>Attendance Details</h3>
+              <p>Detailed day-by-day attendance will appear here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

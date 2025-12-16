@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - SISTec-R</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <div class="sidebar">
+      <div class="brand">
+        <div class="logo-placeholder">SISTec</div>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-item active" onclick="showSection('dashboard', this)">
+          <i class="fas fa-th-large"></i>
+          <span class="menu-text">Dashboard</span>
+        </li>
+        <li class="menu-item" onclick="showSection('profile', this)">
+          <i class="fas fa-user"></i>
+          <span class="menu-text">Profile</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-calendar-check"></i>
+          <span class="menu-text">Attendance</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-desktop"></i>
+          <span class="menu-text">Teachers</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-edit"></i>
+          <span class="menu-text">Exams</span>
+        </li>
+        <li class="menu-item">
+          <i class="fas fa-graduation-cap"></i>
+          <span class="menu-text">Students</span>
+        </li>
+        <li class="menu-item">
+            <i class="fas fa-bed"></i>
+            <span class="menu-text">Hostel</span>
+        </li>
+        <li class="menu-item">
+            <i class="fas fa-file-invoice"></i>
+            <span class="menu-text">Fees</span>
+        </li>
+        <li class="menu-item">
+            <i class="fas fa-key"></i>
+            <span class="menu-text">Password</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <div class="header-left">
+             <i class="fas fa-bars" style="cursor: pointer;"></i> 
+        </div>
+        <div class="header-center">
+          SAGAR INSTITUTE OF SCIENCE, TECHNOLOGY AND RESEARCH (SISTec-R)
+        </div>
+      </header>
+
+      <div id="dashboard" class="content-section">
+        <div class="sketch-container">
+
+            <div class="card schedule-box">
+              <div class="card-header">
+                <div><i class="fas fa-calendar-alt"></i> Publish Class Schedule</div>
+              </div>
+              <div class="schedule-list">
+                <div class="schedule-header-row">
+                  <span class="col-day">Day</span>
+                  <span class="col-file">Upload PDF/Link</span>
+                  <span class="col-action">Action</span>
+                </div>
+          
+                <div class="day-row">
+                  <span class="day-name">Mon</span>
+                  <input type="file" class="file-input" id="file-mon">
+                  <button class="btn-publish" onclick="alert('Schedule for Monday Published!')">Publish</button>
+                </div>
+          
+                <div class="day-row">
+                  <span class="day-name">Tue</span>
+                  <input type="file" class="file-input" id="file-tue">
+                  <button class="btn-publish" onclick="alert('Schedule for Tuesday Published!')">Publish</button>
+                </div>
+          
+                <div class="day-row">
+                  <span class="day-name">Wed</span>
+                  <input type="file" class="file-input" id="file-wed">
+                  <button class="btn-publish" onclick="alert('Schedule for Wednesday Published!')">Publish</button>
+                </div>
+          
+                <div class="day-row">
+                  <span class="day-name">Thu</span>
+                  <input type="file" class="file-input" id="file-thu">
+                  <button class="btn-publish" onclick="alert('Schedule for Thursday Published!')">Publish</button>
+                </div>
+          
+                <div class="day-row">
+                  <span class="day-name">Fri</span>
+                  <input type="file" class="file-input" id="file-fri">
+                  <button class="btn-publish" onclick="alert('Schedule for Friday Published!')">Publish</button>
+                </div>
+          
+                <div class="day-row">
+                  <span class="day-name">Sat</span>
+                  <input type="file" class="file-input" id="file-sat">
+                  <button class="btn-publish" onclick="alert('Schedule for Saturday Published!')">Publish</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="right-stack">
+          
+              <div class="card notice-box">
+                <div class="card-header">
+                  <div><i class="fas fa-bullhorn"></i> Notice Board</div>
+                  <button class="btn-sm" onclick="toggleNoticeForm()">+ Add New</button>
+                </div>
+          
+                <div id="add-notice-form" class="admin-form" style="display: none;">
+                  <input type="text" placeholder="Enter Notice Title..." class="form-control mb-10">
+                  <textarea placeholder="Notice Details..." class="form-control mb-10" rows="2"></textarea>
+                  <button class="btn-primary-sm">Post Notice</button>
+                </div>
+          
+                <div class="notice-content-area">
+                  <ul>
+                    <li><span class="date-badge">Dec 07</span> Mid-Semester Exams starting next week.</li>
+                    <li><span class="date-badge">Dec 05</span> Holiday declared for tomorrow.</li>
+                    <li><span class="date-badge">Nov 30</span> Submit scholarship forms by Friday.</li>
+                  </ul>
+                </div>
+              </div>
+          
+              <div class="card calendar-box">
+                <div class="card-header">
+                  <div><i class="far fa-calendar"></i> Calendar</div>
+                  <button class="btn-sm" onclick="toggleEventForm()">+ Add Event</button>
+                </div>
+          
+                <div id="add-event-form" class="admin-form" style="display: none;">
+                  <input type="date" class="form-control mb-10">
+                  <input type="text" placeholder="Event Name..." class="form-control mb-10">
+                  <button class="btn-primary-sm">Save Event</button>
+                </div>
+          
+                <div class="simple-calendar">
+                  <div class="cal-header">
+                    <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                  </div>
+                  <div class="cal-days">
+                     <span class="prev-month">30</span>
+                     <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                     <span class="today">7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+                     <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                     <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+                     <span>28</span><span>29</span><span>30</span><span>31</span><span class="next-month">1</span><span class="next-month">2</span>
+                  </div>
+                </div>
+              </div>
+          
+            </div> </div> </div> <div id="profile" class="content-section" style="display: none;">
+        <div class="profile-card">
+            <div class="card-header profile-header">
+                <div><i class="fas fa-user-circle"></i> Personal Details</div>
+            </div>
+            
+            <div class="profile-form-grid">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <div class="readonly-field">John Sena</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Staff ID</label>
+                    <div class="readonly-field">0102714</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Contact No.</label>
+                    <div class="readonly-field">7460754320</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Designation Role</label>
+                    <div class="readonly-field">HOD</div>
+                </div>
+
+                <div class="form-group">
+                    <label>DOB</label>
+                    <div class="readonly-field">13/03/2000</div>
+                </div>
+            </div>
+        </div>
+      </div> </div> <script src="script.js"></script>
+  </body>
+</html>
